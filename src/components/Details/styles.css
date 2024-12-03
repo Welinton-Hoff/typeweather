@@ -1,17 +1,15 @@
 .weather-detail {
-  grid-area: weather-details;
-
-  background-color: var(--gray-800);
-  padding: 28px 24px 24px;
   border-radius: 12px;
+  padding: 28px 24px 24px;
+  grid-area: weather-details;
+  background-color: var(--gray-800);
 }
 
 .weather-detail h1 {
   font-size: 1rem;
-  color: var(--gray-400);
   font-weight: 400;
-
   margin-bottom: 20px;
+  color: var(--gray-400);
 }
 
 .weather-detail div:not(:last-child) {

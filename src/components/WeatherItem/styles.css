@@ -1,24 +1,23 @@
 .weather-item {
   width: 100%;
-
   display: flex;
-  align-items: center;
   padding: 24px 0;
+  align-items: center;
 }
 
 .weather-item span {
   flex: 1;
-  margin-left: 20px;
-  color: var(--gray-200);
-  font-size: 0.87rem;
   font-weight: 700;
   text-align: left;
+  margin-left: 20px;
+  font-size: 0.87rem;
+  color: var(--gray-200);
 }
 
 .weather-item strong {
-  color: var(--gray-100);
-  font-size: 1.25rem;
   font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--gray-100);
 }
 
 .weather-item img {

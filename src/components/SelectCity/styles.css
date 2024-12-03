@@ -5,17 +5,17 @@
 
 .select-list {
   width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
   margin-top: 8px;
+  overflow: hidden;
+  border-radius: 8px;
   position: absolute;
 }
 
 .select-list button {
   width: 100%;
   border: none;
-  background-color: var(--gray-500);
   cursor: pointer;
+  background-color: var(--gray-500);
 }
 
 .select-list button:hover {
@@ -29,7 +29,7 @@
 .select-list button p {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--gray-100);
-  padding: 16px 20px;
   text-align: left;
+  padding: 16px 20px;
+  color: var(--gray-100);
 }

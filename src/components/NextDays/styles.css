@@ -1,24 +1,21 @@
 .next-days {
+  border-radius: 12px;
   grid-area: next-days;
-
   padding: 28px 24px 24px;
   background-color: var(--gray-800);
-  border-radius: 12px;
 }
 
 .next-days h1 {
   font-size: 1rem;
-  color: var(--gray-400);
   font-weight: 400;
-
   margin-bottom: 20px;
+  color: var(--gray-400);
 }
 
 .next-next-detail {
   display: flex;
-  justify-content: space-around;
-
   margin-top: 48px;
+  justify-content: space-around;
 }
 
 @media (max-width: 768px) {

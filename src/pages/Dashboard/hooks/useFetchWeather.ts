@@ -6,6 +6,7 @@ import { IToday } from "../../../@types/network/weather";
 import { getWeatherByCity } from "../../../services/network/weather";
 import { TWeatherIconProps, weatherIcons } from "../../../utils/icons";
 import { INextDaysData } from "../../../components/NextDays/components/NextDaysItem";
+import { ICityProps } from "../../../@types/network/city";
 
 const DEFAULT_WEATHER_STATUS = "Clouds";
 
@@ -17,16 +18,18 @@ interface IWeatherData {
 export function useFetchWeather() {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({} as IWeatherData);
-  const [city, setCity] = useState(() => {
-    const storedCity = localStorage.getItem("@typewheather:city");
-    return storedCity ? JSON.parse(storedCity) : "";
-  });
+  const [city, setCity] = useState<ICityProps>(
+    JSON.parse(localStorage.getItem("@typewheather:city") ?? "")
+  );
 
   const onFetch = useCallback(async () => {
     try {
-      setIsLoading(true);
-
       const { latitude, longitude } = city;
+
+      if (!latitude || !longitude)
+        return alert("Sorry, we couldn't find your city 😥");
+
+      setIsLoading(true);
       const { data } = await getWeatherByCity({ latitude, longitude });
 
       const list = data?.list ?? [];

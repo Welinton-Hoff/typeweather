@@ -8,8 +8,8 @@ import { ICityProps } from "../../@types/network/city";
 import { ITodayWeather } from "../../@types/network/weather";
 
 interface ITodayProps {
-  city: string;
   weather: ITodayWeather;
+  city: string | undefined;
   onSearchValue: (city: ICityProps) => void;
 }
 

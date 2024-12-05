@@ -17,9 +17,7 @@ export function Today(props: Readonly<ITodayProps>) {
   const { city, weather, onSearchValue } = props;
 
   const isDay = isDayTime();
-  const today = dayjs(new Date())
-    .locale("en")
-    .format("dddd, DD [de] MMMM [de] YYYY");
+  const today = dayjs(new Date()).format("dddd, DD [de] MMMM [de] YYYY");
 
   const bgImg = isDay ? weather.details.bg_day : weather.details.bg_night;
   const icon = isDay ? weather.details?.icon_day : weather.details?.icon_night;

@@ -60,8 +60,8 @@ export function useFetchWeather() {
 
       for (const item of data?.list ?? []) {
         const day = item?.dt_txt
-          ? dayjs(new Date(item?.dt_txt)).locale("en").format("DD/MM")
-          : dayjs(new Date()).locale("en").format("DD/MM");
+          ? dayjs(new Date(item?.dt_txt)).format("DD/MM")
+          : dayjs(new Date()).format("DD/MM");
 
         if (days.has(day) && !daysAdded.has(day)) {
           daysAdded.add(day);
@@ -75,8 +75,8 @@ export function useFetchWeather() {
             weather: item.weather[0].description ?? "",
             min: Math.floor(item?.main?.temp_min ?? 0),
             day: item?.dt_txt
-              ? dayjs(new Date(item?.dt_txt)).locale("en").format("ddd")
-              : dayjs(new Date()).locale("en").format("ddd"),
+              ? dayjs(new Date(item?.dt_txt)).format("ddd")
+              : dayjs(new Date()).format("ddd"),
           });
         }
       }
